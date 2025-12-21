@@ -1,5 +1,3 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check, Star, ArrowRight } from "lucide-react";
@@ -19,8 +17,6 @@ import {
 export default function Home() {
   return (
     <main>
-      <Header />
-
       {/* Hero Section */}
       <section className="pt-20 pb-24 md:pt-32 md:pb-32 bg-linear-to-b from-primary/5 to-transparent">
         <div className="container-custom">
@@ -170,7 +166,9 @@ export default function Home() {
                       : "bg-primary hover:bg-primary/90"
                   }`}
                 >
-                  <Link href="/contact">{pricingSection.labels.getStarted}</Link>
+                  <Link href="/contact">
+                    {pricingSection.labels.getStarted}
+                  </Link>
                 </Button>
               </div>
             ))}
@@ -289,8 +287,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

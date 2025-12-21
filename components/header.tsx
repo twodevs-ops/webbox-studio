@@ -23,6 +23,7 @@ const Header = () => {
                 width={headerContent.logo.width}
                 height={headerContent.logo.height}
                 objectFit="cover"
+                draggable={false}
               />
             </div>
           </Link>

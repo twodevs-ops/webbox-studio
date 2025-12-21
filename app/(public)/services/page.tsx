@@ -1,25 +1,16 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { servicesPageContent } from "@/constants";
+import { PageHeader } from "@/components/common";
 
 export default function ServicesPage() {
   return (
     <main>
-      <Header />
-
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-6 bg-linear-to-b from-primary/5 to-transparent">
-        <div className="container-custom">
-          <h1 className="heading-xl text-primary mb-6 text-balance">
-            {servicesPageContent.hero.title}
-          </h1>
-          <p className="text-lg text-foreground/80 max-w-2xl">
-            {servicesPageContent.hero.description}
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title={servicesPageContent.hero.title}
+        description={servicesPageContent.hero.description}
+      />
 
       {/* Services Grid */}
       <section className="py-16 md:pb-24 md:pt-10">
@@ -98,8 +89,6 @@ export default function ServicesPage() {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

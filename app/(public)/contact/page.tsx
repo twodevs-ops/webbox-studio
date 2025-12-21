@@ -18,6 +18,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { contactPageContent, contactInfo, contactFAQ } from "@/constants";
+import { PageHeader } from "@/components/common";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -104,19 +105,11 @@ export default function ContactPage() {
 
   return (
     <main>
-      <Header />
-
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-linear-to-b from-primary/5 to-transparent">
-        <div className="container-custom">
-          <h1 className="heading-xl text-primary mb-6 text-balance">
-            {contactPageContent.hero.title}
-          </h1>
-          <p className="text-lg text-foreground/80">
-            {contactPageContent.hero.description}
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title={contactPageContent.hero.title}
+        description={contactPageContent.hero.description}
+      />
 
       {/* Contact Section */}
       <section className="py-16 md:py-24">
@@ -155,7 +148,9 @@ export default function ContactPage() {
                 <h3 className="font-bold text-lg mb-2">
                   {contactPageContent.contactCards.location.title}
                 </h3>
-                <p className="text-foreground/70">{contactInfo.location.full}</p>
+                <p className="text-foreground/70">
+                  {contactInfo.location.full}
+                </p>
               </div>
 
               <div className="p-6 rounded-lg border hover:shadow-lg transition bg-card">
@@ -292,9 +287,7 @@ export default function ContactPage() {
                   <div>
                     <textarea
                       name="message"
-                      placeholder={
-                        contactPageContent.form.placeholders.message
-                      }
+                      placeholder={contactPageContent.form.placeholders.message}
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
@@ -327,10 +320,8 @@ export default function ContactPage() {
             <iframe
               width="100%"
               height="100%"
-              frameBorder="0"
               title="Amritsar, Punjab"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.3656206644344!2d74.87919!3d31.633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919038e66666667%3A0x1234567890abc!2sAmritsar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1234567890"
-              //   allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
@@ -361,8 +352,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
