@@ -1,5 +1,3 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,23 +8,16 @@ import {
   techSectionTitle,
   comparisons,
 } from "@/constants";
+import { PageHeader } from "@/components/common";
 
 export default function AboutPage() {
   return (
     <main>
-      <Header />
-
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-linear-to-b from-primary/5 to-transparent">
-        <div className="container-custom">
-          <h1 className="heading-xl text-primary mb-6 text-balance">
-            {aboutPageContent.hero.title}
-          </h1>
-          <p className="text-lg text-foreground/80">
-            {aboutPageContent.hero.description}
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title={aboutPageContent.hero.title}
+        description={aboutPageContent.hero.description}
+      />
 
       {/* Our Story */}
       <section className="py-16 md:py-24">
@@ -216,8 +207,6 @@ export default function AboutPage() {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

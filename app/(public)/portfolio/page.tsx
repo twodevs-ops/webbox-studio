@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { PageHeader } from "@/components/common";
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState("all");
@@ -82,19 +81,11 @@ export default function PortfolioPage() {
 
   return (
     <main>
-      <Header />
-
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-linear-to-b from-primary/5 to-transparent">
-        <div className="container-custom">
-          <h1 className="heading-xl text-primary mb-6 text-balance">
-            Our Recent Work
-          </h1>
-          <p className="text-lg text-foreground/80 max-w-2xl">
-            Websites that bring results for Amritsar businesses
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Our Recent Work"
+        description="Websites that bring results for Amritsar businesses"
+      />
 
       {/* Filter */}
       <section className="py-8">
@@ -196,8 +187,6 @@ export default function PortfolioPage() {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
