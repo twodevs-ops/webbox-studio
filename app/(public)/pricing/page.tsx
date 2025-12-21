@@ -1,26 +1,16 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import { PageHeader } from "@/components/common";
 
 export default function PricingPage() {
   return (
     <main>
-      <Header />
-
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-linear-to-b from-primary/5 to-transparent">
-        <div className="container-custom">
-          <h1 className="heading-xl text-primary mb-6 text-balance">
-            Transparent Pricing
-          </h1>
-          <p className="text-lg text-foreground/80 max-w-2xl">
-            No hidden costs, no surprises. Choose the plan that fits your needs.
-            All plans include free support.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Transparent Pricing"
+        description="No hidden costs, no surprises. Choose the plan that fits your needs. All plans include free support."
+      />
 
       {/* Pricing Plans */}
       <section className="py-16 md:py-24">
@@ -301,8 +291,6 @@ export default function PricingPage() {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }
